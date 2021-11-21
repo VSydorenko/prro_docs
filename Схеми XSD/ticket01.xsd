@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:simpleType name="DGStr128">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="TICKET" type="TicketContent"/>
+	<xs:complexType name="TicketContent">
+		<xs:sequence>
+			<!--Унікальний ідентифікатор документа (GUID, обов’язковий)-->
+			<xs:element name="UID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<!--Дата операції (ddmmyyyy, обов’язковий)-->
+			<xs:element name="ORDERDATE" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Час операції (hhmmss, обов’язковий)-->
+			<xs:element name="ORDERTIME" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Локальний номер документа (128 символів, обов’язковий)-->
+			<xs:element name="ORDERNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Фіскальний номер документа (128 символів, необов’язковий)-->
+			<xs:element name="ORDERTAXNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор офлайн сесії (128 символів, обов’язковий)-->
+			<xs:element name="OFFLINESESSIONID" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<!--"Секретне число" для обчислення фіскального номера офлайн документа (128 символів, обов’язковий)-->
+			<xs:element name="OFFLINESEED" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Код помилки (Ціле число >= 0, необов’язковий)-->
+			<xs:element name="ERRORCODE" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+			<!--Текст помилки (Текст, необов’язковий)-->
+			<xs:element name="ERRORTEXT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Версія формату документа (числовий)-->
+			<xs:element name="VER" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
