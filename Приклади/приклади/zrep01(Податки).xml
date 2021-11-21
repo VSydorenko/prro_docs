@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<ZREP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zrep01.xsd">
+  <ZREPHEAD>
+    <UID>0BCD7495-E1B0-4124-B4AE-C566AF0BF936</UID>
+    <TIN>99900000</TIN>
+    <IPN>999000000009</IPN>
+    <ORGNM>ТОВ "Тест"</ORGNM>
+    <POINTNM>Кафе "Пончик"</POINTNM>
+    <POINTADDR>ПІВНІЧНО-ЗАХІДНА ЧАСТИНА ШЕЛЬФУ ЧОРНОГО МОРЯ</POINTADDR>
+    <ORDERDATE>25112020</ORDERDATE>
+    <ORDERTIME>103540</ORDERTIME>
+    <ORDERNUM>494</ORDERNUM>
+    <CASHDESKNUM>1</CASHDESKNUM>
+    <CASHREGISTERNUM>4000004601</CASHREGISTERNUM>
+    <CASHIER>Печатка №55555 для РРО Товариство з обмеженою відповідальністю "</CASHIER>
+    <VER>0</VER>
+  </ZREPHEAD>
+  <ZREPREALIZ>
+    <SUM>2681.30</SUM>
+    <ORDERSCNT>4</ORDERSCNT>
+    <PAYFORMS>
+      <ROW ROWNUM="1">
+        <PAYFORMCD>1</PAYFORMCD>
+        <PAYFORMNM>КАРТКА</PAYFORMNM>
+        <SUM>2681.30</SUM>
+      </ROW>
+    </PAYFORMS>
+    <TAXES>
+      <ROW ROWNUM="1">
+        <TYPE>0</TYPE>
+        <NAME>ПДВ</NAME>
+        <LETTER>А</LETTER>
+        <PRC>20.00</PRC>
+        <TURNOVER>1033.29</TURNOVER>
+        <SOURCESUM>1019.67</SOURCESUM>
+        <SUM>169.94</SUM>
+      </ROW>
+      <ROW ROWNUM="2">
+        <TYPE>0</TYPE>
+        <NAME>ПДВ</NAME>
+        <LETTER>В</LETTER>
+        <PRC>0.00</PRC>
+        <TURNOVER>1122.99</TURNOVER>
+        <SOURCESUM>1122.99</SOURCESUM>
+        <SUM>0.00</SUM>
+      </ROW>
+      <ROW ROWNUM="3">
+        <TYPE>1</TYPE>
+        <NAME>Акциз</NAME>
+        <LETTER>Г</LETTER>
+        <PRC>5.00</PRC>
+        <TURNOVER>810.91</TURNOVER>
+        <SOURCESUM>810.91</SOURCESUM>
+        <SUM>38.62</SUM>
+      </ROW>
+    </TAXES>
+  </ZREPREALIZ>
+  <ZREPBODY>
+    <SERVICEINPUT>0.00</SERVICEINPUT>
+    <SERVICEOUTPUT>4500.00</SERVICEOUTPUT>
+  </ZREPBODY>
+</ZREP>

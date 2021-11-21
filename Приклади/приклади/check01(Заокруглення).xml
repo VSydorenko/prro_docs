@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+  <CHECKHEAD>
+    <DOCTYPE>0</DOCTYPE>
+    <DOCSUBTYPE>0</DOCSUBTYPE>
+    <UID>87C8FDE8-FD91-4639-80EE-9E10A6BA1A9D</UID>
+    <TIN>34554363</TIN>
+    <IPN>123456789020</IPN>
+    <ORGNM>Тестовий платник 4</ORGNM>
+    <POINTNM>Інтернет-магазин автоаксесуарів</POINTNM>
+    <POINTADDR>УКРАЇНА, ВIННИЦЬКА ОБЛ., М. ВІННИЦЯ, вул. Янгеля, 4</POINTADDR>
+    <ORDERDATE>13102020</ORDERDATE>
+    <ORDERTIME>131816</ORDERTIME>
+    <ORDERNUM>8</ORDERNUM>
+    <CASHDESKNUM>121</CASHDESKNUM>
+    <CASHREGISTERNUM>4000038158</CASHREGISTERNUM>
+    <CASHIER>Тестовий платник 4 (Тест)</CASHIER>
+    <VER>0</VER>
+    <ORDERTAXNUM>195865</ORDERTAXNUM>
+  </CHECKHEAD>
+  <CHECKTOTAL>
+    <SUM>12.60</SUM>
+    <RNDSUM>-0.03</RNDSUM>
+    <NORNDSUM>12.57</NORNDSUM>
+  </CHECKTOTAL>
+  <CHECKPAY>
+    <ROW ROWNUM="1">
+      <PAYFORMCD>0</PAYFORMCD>
+      <PAYFORMNM>ГОТІВКА</PAYFORMNM>
+      <SUM>12.60</SUM>
+      <PROVIDED>20.00</PROVIDED>
+      <REMAINS>7.40</REMAINS>
+    </ROW>
+  </CHECKPAY>
+  <CHECKTAX>
+    <ROW ROWNUM="1">
+      <TYPE>0</TYPE>
+      <NAME>ПДВ</NAME>
+      <LETTER>А</LETTER>
+      <PRC>20.00</PRC>
+      <TURNOVER>12.57</TURNOVER>
+      <SUM>2.09</SUM>
+    </ROW>
+  </CHECKTAX>
+  <CHECKBODY>
+    <ROW ROWNUM="1">
+      <CODE>10</CODE>
+      <UKTZED>2008999100</UKTZED>
+      <NAME>Мыло Детское</NAME>
+      <UNITNM>шт</UNITNM>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>12.57</PRICE>
+      <LETTERS>А</LETTERS>
+      <COST>12.57</COST>
+    </ROW>
+  </CHECKBODY>
+</CHECK>

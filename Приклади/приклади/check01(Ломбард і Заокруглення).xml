@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+  <CHECKHEAD>
+    <DOCTYPE>4</DOCTYPE>
+    <DOCSUBTYPE>0</DOCSUBTYPE>
+    <UID>d9c74e8e-34c2-4465-b1b6-86b7e73afcbd</UID>
+    <TIN>34554363</TIN>
+    <IPN>123456789020</IPN>
+    <ORGNM>Тестовий платник 4</ORGNM>
+    <POINTNM>Магазин Іван-Тест</POINTNM>
+    <POINTADDR>УКРАЇНА, СУМСЬКА ОБЛ., М. СУМИ, вул. Соборна 1</POINTADDR>
+    <ORDERDATE>30082021</ORDERDATE>
+    <ORDERTIME>135200</ORDERTIME>
+    <ORDERNUM>13984</ORDERNUM>
+    <CASHDESKNUM>24</CASHDESKNUM>
+    <CASHREGISTERNUM>4000066879</CASHREGISTERNUM>
+    <CASHIER>Для РРО № 4000066879</CASHIER>
+    <COMMENT>Спасибо за то что выбрали нас!</COMMENT>
+    <VER>1</VER>
+  </CHECKHEAD>
+  <CHECKTOTAL>
+    <SUM>-2991.00</SUM>
+    <PWNSUMISSUED>2991.00</PWNSUMISSUED>
+    <RNDSUM>-0.02</RNDSUM>
+    <NORNDSUM>-2991.02</NORNDSUM>
+  </CHECKTOTAL>
+  <CHECKPAY>
+    <ROW ROWNUM="1">
+      <PAYFORMCD>0</PAYFORMCD>
+      <PAYFORMNM>Готівка</PAYFORMNM>
+      <SUM>-2991.00</SUM>
+      <PROVIDED>-2991.00</PROVIDED>
+    </ROW>
+  </CHECKPAY>
+  <CHECKTAX>
+    <ROW ROWNUM="1">
+      <TYPE>0</TYPE>
+      <NAME>ПДВ</NAME>
+      <LETTER>Ж</LETTER>
+      <PRC>0.00</PRC>
+      <SIGN>false</SIGN>
+      <TURNOVER>2991.02</TURNOVER>
+      <SOURCESUM>2991.02</SOURCESUM>
+      <SUM>0.00</SUM>
+    </ROW>
+  </CHECKTAX>
+  <CHECKBODY>
+    <ROW ROWNUM="1">
+      <NAME>повернення фінкредиту: або одержано платіж від третьої особи в рахунок виконання забов'язень</NAME>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>2828.60</PRICE>
+      <LETTERS>Ж</LETTERS>
+      <COST>2828.60</COST>
+      <PWNDIR>false</PWNDIR>
+      <COMMENT>ДОН0171002460</COMMENT>
+    </ROW>
+    <ROW ROWNUM="2">
+      <NAME>або одержано платіж від третьої особи в рахунок виконання забов'язень % за користування:</NAME>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>96.78</PRICE>
+      <LETTERS>Ж</LETTERS>
+      <COST>96.78</COST>
+      <PWNDIR>false</PWNDIR>
+      <COMMENT>ДОН0171002460</COMMENT>
+    </ROW>
+    <ROW ROWNUM="3">
+      <NAME>страховий платіж:</NAME>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>65.64</PRICE>
+      <LETTERS>Ж</LETTERS>
+      <COST>65.64</COST>
+      <PWNDIR>false</PWNDIR>
+      <COMMENT>ДОН0171002460</COMMENT>
+    </ROW>
+  </CHECKBODY>
+</CHECK>
