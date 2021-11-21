@@ -20,15 +20,15 @@
 			<xs:element name="ORDERNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
 			<!--Фіскальний номер документа (128 символів, необов’язковий)-->
 			<xs:element name="ORDERTAXNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
-			<!--Ідентифікатор офлайн сесії (128 символів, обов’язковий)-->
+			<!--Ідентифікатор офлайн сесії (128 символів, необов’язковий)-->
 			<xs:element name="OFFLINESESSIONID" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
-			<!--"Секретне число" для обчислення фіскального номера офлайн документа (128 символів, обов’язковий)-->
+			<!--"Секретне число" для обчислення фіскального номера офлайн документа (128 символів, необов’язковий)-->
 			<xs:element name="OFFLINESEED" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
 			<!--Код помилки (Ціле число >= 0, необов’язковий)-->
 			<xs:element name="ERRORCODE" type="xs:integer" minOccurs="0" maxOccurs="1"/>
-			<!--Текст помилки (Текст, необов’язковий)-->
+			<!--Текст помилки (текст, необов’язковий)-->
 			<xs:element name="ERRORTEXT" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<!--Версія формату документа (числовий)-->
+			<!--Версія формату документа (числовий, обов’язковий)-->
 			<xs:element name="VER" type="xs:integer" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
