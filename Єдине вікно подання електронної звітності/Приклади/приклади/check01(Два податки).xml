@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+  <CHECKHEAD>
+    <DOCTYPE>0</DOCTYPE>
+    <DOCSUBTYPE>0</DOCSUBTYPE>
+    <UID>73617BB1-CC9F-4023-9213-19B5012B93FE</UID>
+    <TIN>99900000</TIN>
+    <IPN>999000000009</IPN>
+    <ORGNM>ТОВ "Тест"</ORGNM>
+    <POINTNM>Кафе "Пончик"</POINTNM>
+    <POINTADDR>ПІВНІЧНО-ЗАХІДНА ЧАСТИНА ШЕЛЬФУ ЧОРНОГО МОРЯ</POINTADDR>
+    <ORDERDATE>24112020</ORDERDATE>
+    <ORDERTIME>154331</ORDERTIME>
+    <ORDERNUM>489</ORDERNUM>
+    <CASHDESKNUM>1</CASHDESKNUM>
+    <CASHREGISTERNUM>4000004601</CASHREGISTERNUM>
+    <CASHIER>Печатка №55555 для РРО Товариство з обмеженою відповідальністю "</CASHIER>
+    <VER>0</VER>
+    <ORDERTAXNUM>177086</ORDERTAXNUM>
+  </CHECKHEAD>
+  <CHECKTOTAL>
+    <SUM>259.90</SUM>
+  </CHECKTOTAL>
+  <CHECKPAY>
+    <ROW ROWNUM="1">
+      <PAYFORMCD>1</PAYFORMCD>
+      <PAYFORMNM>КАРТКА</PAYFORMNM>
+      <SUM>259.90</SUM>
+      <PROVIDED>259.90</PROVIDED>
+    </ROW>
+  </CHECKPAY>
+  <CHECKTAX>
+    <ROW ROWNUM="1">
+      <TYPE>0</TYPE>
+      <NAME>ПДВ</NAME>
+      <LETTER>А</LETTER>
+      <PRC>20.00</PRC>
+      <TURNOVER>259.90</TURNOVER>
+      <SOURCESUM>247.52</SOURCESUM>
+      <SUM>41.25</SUM>
+    </ROW>
+    <ROW ROWNUM="2">
+      <TYPE>1</TYPE>
+      <NAME>Акциз</NAME>
+      <LETTER>Г</LETTER>
+      <PRC>5.00</PRC>
+      <TURNOVER>259.90</TURNOVER>
+      <SOURCESUM>259.90</SOURCESUM>
+      <SUM>12.38</SUM>
+    </ROW>
+  </CHECKTAX>
+  <CHECKBODY>
+    <ROW ROWNUM="1">
+      <CODE>22</CODE>
+      <UKTZED>2710124512</UKTZED>
+      <NAME>Вино розливне "Каберне Совиньон Винодельческая станция"</NAME>
+      <UNITNM>л</UNITNM>
+      <AMOUNT>10.000</AMOUNT>
+      <PRICE>25.99</PRICE>
+      <LETTERS>АГ</LETTERS>
+      <COST>259.90</COST>
+      <EXCISELABELS>
+        <ROW ROWNUM="1">
+          <EXCISELABEL>AATE508932 0000412168</EXCISELABEL>
+        </ROW>
+      </EXCISELABELS>
+    </ROW>
+  </CHECKBODY>
+</CHECK>

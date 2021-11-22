@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+  <CHECKHEAD>
+    <DOCTYPE>0</DOCTYPE>
+    <DOCSUBTYPE>0</DOCSUBTYPE>
+    <UID>B74BF444-A878-4078-B70F-974349ADD30D</UID>
+    <TIN>1212031212</TIN>
+    <IPN>001212031212</IPN>
+    <ORGNM>test</ORGNM>
+    <POINTNM>Силосна траншея</POINTNM>
+    <POINTADDR>УКРАЇНА, АВТОНОМНА РЕСПУБЛІКА КРИМ Чернігівька обл.с.Шабалинів</POINTADDR>
+    <ORDERDATE>13102020</ORDERDATE>
+    <ORDERTIME>161105</ORDERTIME>
+    <ORDERNUM>133</ORDERNUM>
+    <CASHDESKNUM>1014</CASHDESKNUM>
+    <CASHREGISTERNUM>4000001614</CASHREGISTERNUM>
+    <CASHIER>Павленко П. П.</CASHIER>
+    <VER>1</VER>
+  </CHECKHEAD>
+  <CHECKTOTAL>
+    <SUM>210.00</SUM>
+    <DISCOUNTSUM>90.00</DISCOUNTSUM>
+  </CHECKTOTAL>
+  <CHECKPAY>
+    <ROW ROWNUM="1">
+      <PAYFORMCD>0</PAYFORMCD>
+      <PAYFORMNM>ГОТІВКА</PAYFORMNM>
+      <SUM>210.00</SUM>
+    </ROW>
+  </CHECKPAY>
+  <CHECKTAX>
+    <ROW ROWNUM="1">
+      <TYPE>0</TYPE>
+      <NAME>ПДВ</NAME>
+      <LETTER>А</LETTER>
+      <PRC>20.00</PRC>
+      <TURNOVER>100.00</TURNOVER>
+      <SOURCESUM>50.00</SOURCESUM>
+      <SUM>8.33</SUM>
+    </ROW>
+    <ROW ROWNUM="2">
+      <TYPE>0</TYPE>
+      <NAME>ПДВ</NAME>
+      <LETTER>Б</LETTER>
+      <PRC>7.00</PRC>
+      <TURNOVER>200.00</TURNOVER>
+      <SOURCESUM>160.00</SOURCESUM>
+      <SUM>10.47</SUM>
+    </ROW>
+  </CHECKTAX>
+  <CHECKBODY>
+    <ROW ROWNUM="1">
+      <CODE>12345</CODE>
+      <NAME>морква</NAME>
+      <UNITCD>2009</UNITCD>
+      <UNITNM>шт</UNITNM>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>100.00</PRICE>
+      <LETTERS>А</LETTERS>
+      <COST>100.00</COST>
+      <DISCOUNTTYPE>1</DISCOUNTTYPE>
+      <DISCOUNTPERCENT>50.00</DISCOUNTPERCENT>
+      <DISCOUNTSUM>50.00</DISCOUNTSUM>
+    </ROW>
+    <ROW ROWNUM="2">
+      <CODE>54321</CODE>
+      <NAME>цибуля</NAME>
+      <UNITCD>2009</UNITCD>
+      <UNITNM>шт</UNITNM>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>200.00</PRICE>
+      <LETTERS>Б</LETTERS>
+      <COST>200.00</COST>
+      <DISCOUNTTYPE>1</DISCOUNTTYPE>
+      <DISCOUNTPERCENT>20.00</DISCOUNTPERCENT>
+      <DISCOUNTSUM>40.00</DISCOUNTSUM>
+    </ROW>
+  </CHECKBODY>
+</CHECK>

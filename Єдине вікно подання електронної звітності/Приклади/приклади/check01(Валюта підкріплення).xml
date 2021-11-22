@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+	<CHECKHEAD>
+		<DOCTYPE>2</DOCTYPE>
+		<DOCSUBTYPE>3</DOCSUBTYPE>
+		<UID>3899D8F9-0667-4AC9-8BFD-EEB8D14D2E29</UID>
+		<TIN>11111111</TIN>
+		<ORGNM>ТОВ "Тест"</ORGNM>
+		<POINTNM>Відділення НФУ №2 ТОВ "Тест"</POINTNM>
+		<POINTADDR>УКРАЇНА, М.КИЇВ СВЯТОШИНСЬКИЙ Р-Н, 03179, м. Київ, вул. Тест, 1</POINTADDR>
+		<ORDERDATE>01012021</ORDERDATE>
+		<ORDERTIME>124241</ORDERTIME>
+		<ORDERNUM>1377</ORDERNUM>
+		<CASHDESKNUM>12300001</CASHDESKNUM>
+		<CASHREGISTERNUM>4000011111</CASHREGISTERNUM>
+		<CASHIER>Іванов</CASHIER>
+		<VER>1</VER>
+	</CHECKHEAD>
+	<CHECKBODY>
+		<ROW ROWNUM="1">
+			<VALCD>980</VALCD>
+			<VALSYMCD>UAH</VALSYMCD>
+			<VALNM>Гривня</VALNM>
+			<VALNATIONALSUM>200000.00</VALNATIONALSUM>
+		</ROW>
+	</CHECKBODY>
+</CHECK>

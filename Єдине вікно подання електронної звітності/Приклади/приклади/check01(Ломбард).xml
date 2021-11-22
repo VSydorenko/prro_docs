@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ticket01.xsd">
+	<CHECKHEAD>
+		<DOCTYPE>4</DOCTYPE>
+		<DOCSUBTYPE>0</DOCSUBTYPE>
+		<UID>B4C6591B-1E58-41F6-99F1-D1ED0A24104B</UID>
+		<TIN>10899999</TIN>
+		<IPN>108999999999</IPN>
+		<ORGNM>test</ORGNM>
+		<POINTNM>Пункт запліднення</POINTNM>
+		<POINTADDR>УКРАЇНА, АВТОНОМНА РЕСПУБЛІКА КРИМ Чернігівька обл.с.Шабалинів</POINTADDR>
+		<ORDERDATE>03062021</ORDERDATE>
+		<ORDERTIME>173947</ORDERTIME>
+		<ORDERNUM>1446</ORDERNUM>
+		<CASHDESKNUM>4</CASHDESKNUM>
+		<CASHREGISTERNUM>4000000004</CASHREGISTERNUM>
+		<CASHIER>Мирний Олександр Максимович (Тест)</CASHIER>
+		<VER>1</VER>
+	</CHECKHEAD>
+	<CHECKTOTAL>
+		<SUM>-89.99</SUM>
+		<PWNSUMISSUED>99.99</PWNSUMISSUED>
+		<PWNSUMRECEIVED>10.00</PWNSUMRECEIVED>
+	</CHECKTOTAL>
+	<CHECKPAY>
+		<ROW ROWNUM="1">
+			<PAYFORMCD>0</PAYFORMCD>
+			<PAYFORMNM>ГОТІВКА</PAYFORMNM>
+			<SUM>-89.99</SUM>
+			<PROVIDED>-200.00</PROVIDED>
+			<REMAINS>-110.01</REMAINS>
+		</ROW>
+	</CHECKPAY>
+	<CHECKTAX>
+		<ROW ROWNUM="1">
+			<TYPE>0</TYPE>
+			<NAME>ПДВ</NAME>
+			<LETTER>А</LETTER>
+			<PRC>20.00</PRC>
+			<TURNOVER>99.99</TURNOVER>
+			<SUM>15.87</SUM>
+		</ROW>
+		<ROW ROWNUM="2">
+			<TYPE>1</TYPE>
+			<NAME>Акциз</NAME>
+			<LETTER>Г</LETTER>
+			<PRC>5.00</PRC>
+			<TURNOVER>99.99</TURNOVER>
+			<SUM>4.76</SUM>
+		</ROW>
+	</CHECKTAX>
+	<CHECKBODY>
+		<ROW ROWNUM="1">
+			<CODE>1</CODE>
+			<NAME>Дог№ 20024126(1) Додат. кредит Без ПДВ</NAME>
+			<UNITCD>0</UNITCD>
+			<LETTERS>АГ</LETTERS>
+			<COST>99.99</COST>
+			<PWNDIR>false</PWNDIR>
+		</ROW>
+		<ROW ROWNUM="2">
+			<CODE>2</CODE>
+			<NAME>Дог№ 20024126(1) Корист. кредитом Без ПДВ</NAME>
+			<UNITCD>0</UNITCD>
+			<COST>10.00</COST>
+			<PWNDIR>true</PWNDIR>
+		</ROW>
+	</CHECKBODY>
+</CHECK>
