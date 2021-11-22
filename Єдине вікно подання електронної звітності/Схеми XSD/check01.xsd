@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:simpleType name="DGDrfo">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:pattern value="([0-9]{5,10}|[АБВГДЕЄЖЗИІКЛМНОПРСТУФХЦЧШЩЮЯ]{2}[0-9]{6})"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--Загальний тип "Індивідуальний податковий номер платника з можливістю внесення 0 (нуля)"-->
+	<xs:simpleType name="DGHIPN0">
+		<xs:annotation>
+			<xs:documentation>Відповідно до Положення про реєстрацію платників податку на додану вартість, п.6.3 наказ ДПАУ від 22.12.2010 № 978
+			Індивідуальний податковий номер платника, можливі значення:
+			* 0 (нуль)
+			* число від 6 до 12 чисел
+			* № паспорта</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(0)|([0-9]{6,12})|([АБВГДЕЄЖЗИІКЛМНОПРСТУФХЦЧШЩЮЯ]{2}[0-9]{6})"/>
+		</xs:restriction>
+		<!--17.02.2011 модифіковано відповідно до листа від 17.02.11 № 28-0517/61-->
+	</xs:simpleType>
+
+	<xs:simpleType name="DGLong12">
+		<xs:restriction base="xs:unsignedLong">
+			<xs:minInclusive value="1000"/>
+			<xs:maxInclusive value="999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr256">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr128">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr64">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr15">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGLong5">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGDecimal0">
+		<xs:restriction base="xs:decimal">
+			<xs:pattern value="\-{0,1}[0-9]+(\.0{1,2}){0,1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGDecimal2">
+		<xs:restriction base="xs:decimal">
+			<xs:pattern value="\-{0,1}[0-9]+\.[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGDecimal3">
+		<xs:restriction base="xs:decimal">
+			<xs:pattern value="\-{0,1}[0-9]+\.[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGDecimal3_R">
+		<xs:restriction base="xs:decimal">
+			<xs:pattern value="\-{0,1}[0-9]+(\.[0-9]{1,3}){0,1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGTax">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGLetter">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="rowInt">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="StrColumn">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Str64Column">
+		<xs:simpleContent>
+			<xs:extension base="DGStr64">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Str15Column">
+		<xs:simpleContent>
+			<xs:extension base="DGStr15">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Str128Column">
+		<xs:simpleContent>
+			<xs:extension base="DGStr128">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Long5Column">
+		<xs:simpleContent>
+			<xs:extension base="DGLong5">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Decimal0Column">
+		<xs:simpleContent>
+			<xs:extension base="DGDecimal0">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Decimal2Column">
+		<xs:simpleContent>
+			<xs:extension base="DGDecimal2">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Decimal3Column">
+		<xs:simpleContent>
+			<xs:extension base="DGDecimal3">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Decimal3Column_R">
+		<xs:simpleContent>
+			<xs:extension base="DGDecimal3_R">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="TaxColumn">
+		<xs:simpleContent>
+			<xs:extension base="DGTax">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="LetterColumn">
+		<xs:simpleContent>
+			<xs:extension base="DGLetter">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="HIPNColumn0">
+		<xs:annotation>
+			<xs:documentation>Загальний тип для визначення формату ІНДИВІДУАЛЬНИЙ ПОДАТКОВИЙ НОМЕР з можливістю внесення 0 (нуля) в колонці</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="DGHIPN0">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:element name="CHECK" type="CheckContent"/>
+	<xs:complexType name="CheckContent">
+		<xs:sequence>
+			<!--Заголовок-->
+			<xs:element name="CHECKHEAD" type="CHead" minOccurs="1" maxOccurs="1"/>
+			<!--Підсумок по чеку-->
+			<xs:element name="CHECKTOTAL" type="CTotal" minOccurs="0" maxOccurs="1"/>
+			<!--Реалізація-->
+			<xs:element name="CHECKPAY" type="CPay" minOccurs="0" maxOccurs="1"/>
+			<!--Податки/Збори-->
+			<xs:element name="CHECKTAX" type="CTax" minOccurs="0" maxOccurs="1"/>
+			<!--Реквізити програмно-технічного комплексу самообслуговування (ПТКС)-->
+			<xs:element name="CHECKPTKS" type="CPtks" minOccurs="0" maxOccurs="1"/>
+			<!--Продажі-->
+			<xs:element name="CHECKBODY" type="CBody" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--Заголовок-->
+	<xs:complexType name="CHead">
+		<xs:sequence>
+			<!--Тип документа (числовий):
+			    0-Чек реалізації товарів/послуг, 1-Чек переказу коштів, 2–Чек операції обміну валюти, 3-Чек видачі готівки,
+				100-Відкриття зміни, 101-Закриття зміни, 102-Початок офлайн сесії, 103-Завершення офлайн сесії-->
+			<xs:element name="DOCTYPE" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Розширений тип документа (числовий):
+			    0-Касовий чек (реалізація), 1-Видатковий чек (повернення), 2-Чек операції «службове внесення»/«отримання авансу»,
+				3-Чек операції «отримання підкріплення», 4–Чек операції «службова видача»/«інкасація»,
+				5-Чек сторнування попереднього чека-->
+			<xs:element name="DOCSUBTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Унікальний ідентифікатор документа (GUID)-->
+			<xs:element name="UID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<!--ЄДРПОУ/ДРФО/№ паспорта продавця (10 символів)-->
+			<xs:element name="TIN" type="DGDrfo" minOccurs="1" maxOccurs="1"/>
+			<!--Податковий номер або Індивідуальний номер платника ПДВ (12 символів)-->
+			<xs:element name="IPN" type="DGHIPN0" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування продавця (256 символів)-->
+			<xs:element name="ORGNM" type="DGStr256" minOccurs="1" maxOccurs="1"/>
+			<!--Найменування точки продаж (256 символів)-->
+			<xs:element name="POINTNM" type="DGStr256" minOccurs="1" maxOccurs="1"/>
+			<!--Адреса точки продаж (256 символів)-->
+			<xs:element name="POINTADDR" type="DGStr256" minOccurs="0" maxOccurs="1"/>
+			<!--Дата операції (ddmmyyyy)-->
+			<xs:element name="ORDERDATE" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Час операції (hhmmss)-->
+			<xs:element name="ORDERTIME" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Локальний номер документа (128 символів)-->
+			<xs:element name="ORDERNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Локальний номер програмного реєстратора розрахункових операцій (64 символи)-->
+			<xs:element name="CASHDESKNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Фіскальний номер програмного реєстратора розрахункових операцій (128 символів)-->
+			<xs:element name="CASHREGISTERNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Фіскальний номер чека, для якого здійснюється повернення (зазначається тільки для чеків повернення) (128 символів)-->
+			<xs:element name="ORDERRETNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Фіскальний номер чека, для якого здійснюється сторнування (зазначається тільки для чеків сторнування) (128 символів)-->
+			<xs:element name="ORDERSTORNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Державний реєстраційний номер транспортного засобу (64 символи)-->
+			<xs:element name="VEHICLERN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Документ "Початок офлайн сесії"-->
+			<!--Ознака відкликання останнього онлайн документа через дублювання офлайн документом-->
+			<xs:element name="REVOKELASTONLINEDOC" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--ПІБ касира (128 символів)-->
+			<xs:element name="CASHIER" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Версія формату документа (числовий)-->
+			<xs:element name="VER" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<!--Фіскальний номер документа (128 символів)-->
+			<xs:element name="ORDERTAXNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Документ відкликано-->
+			<xs:element name="REVOKED" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Документ сторновано-->
+			<xs:element name="STORNED" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Ознака офлайн документа-->
+			<xs:element name="OFFLINE" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Геш попереднього документа в режимі офлайн (64 символи)-->
+			<xs:element name="PREVDOCHASH" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--Підсумок по чеку-->
+	<xs:complexType name="CTotal">
+		<xs:sequence>
+			<!--Загальна сума (15.2 цифри) (наприклад, 1000.00)-->
+			<xs:element name="SUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Заокруглення (15.2 цифри) (наприклад, 0.71)-->
+			<xs:element name="RNDSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Загальна сума без округлення (15.2 цифри) (наприклад, 1000.71)-->
+			<xs:element name="NORNDSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Сума чеку без урахування податків/зборів (15.2 цифри)-->
+			<xs:element name="NOTAXSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Сума комісії (15.2 цифри)-->
+			<xs:element name="COMMISSION" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Тип застосування знижки/націнки (1 символ):
+			    0–Попередній продаж, 1–Проміжний підсумок, 2–Спеціальна...-->
+			<xs:element name="USAGETYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Сума на яку нараховується знижка/націнка (15.2 цифри)-->
+			<xs:element name="SUBCHECK" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Тип знижки/націнки (1 символ):
+			    0–Сумова, 1–Відсоткова-->
+			<xs:element name="DISCOUNTTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Відсоток знижки, для відсоткових знижок (не зазначається при фіксованій сумі знижки) (15.2 цифри)-->
+			<xs:element name="DISCOUNTPERCENT" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Загальна сума знижки (15.2 цифри)-->
+			<xs:element name="DISCOUNTSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--Реалізація-->
+	<xs:complexType name="CPay">
+		<xs:sequence>
+			<xs:element name="ROW" type="TROWSPAY" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TROWSPAY">
+		<xs:sequence>
+			<!--Код форми оплати (числовий):
+			    0–Готівка, 1–Банківська картка...-->
+			<xs:element name="PAYFORMCD" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Найменування форми оплати (64 символи)-->
+			<xs:element name="PAYFORMNM" type="Str64Column" minOccurs="1" maxOccurs="1"/>
+			<!--Сума оплати (15.2 цифри)-->
+			<xs:element name="SUM" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Сума внесених коштів (15.2 цифри)-->
+			<xs:element name="PROVIDED" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Решта (не зазначається, якщо решта відсутня) (15.2 цифри)-->
+			<xs:element name="REMAINS" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Платіжні системи-->
+			<xs:element name="PAYSYS" type="CPaySys" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
+	</xs:complexType>
+
+	<!--Реалізація - платіжні системи-->
+	<xs:complexType name="CPaySys">
+		<xs:sequence>
+			<xs:element name="ROW" type="TROWSPAYSYS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TROWSPAYSYS">
+		<xs:sequence>
+			<!--Податковий номер платіжної системи (64 символи)-->
+			<xs:element name="TAXNUM" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування платіжної системи (текст)-->
+			<xs:element name="NAME" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер еквайра торговця (64 символи)-->
+			<xs:element name="ACQUIREPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування еквайра торговця (текст)-->
+			<xs:element name="ACQUIRENM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор транзакції, що надається еквайром та ідентифікує операцію в платіжній системі (128 символів)-->
+			<xs:element name="ACQUIRETRANSID" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор платіжного пристрою (128 символів)-->
+			<xs:element name="DEVICEID" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Реквізити електронного платіжного засобу (128 символів)-->
+			<xs:element name="EPZDETAILS" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Код авторизації (64 символи)-->
+			<xs:element name="AUTHCD" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Сума комісії (15.2 цифри)-->
+			<xs:element name="COMMISSION" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
+	</xs:complexType>
+
+	<!--Податки/Збори-->
+	<xs:complexType name="CTax">
+		<xs:sequence>
+			<xs:element name="ROW" type="TROWSTAX" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TROWSTAX">
+		<xs:sequence>
+			<!--Код виду податку/збору (числовий):
+			    0-ПДВ,1-Акциз,2-ПФ...-->
+			<xs:element name="TYPE" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Найменування виду податку/збору (64 символи)-->
+			<xs:element name="NAME" type="Str64Column" minOccurs="1" maxOccurs="1"/>
+			<!--Літерне позначення виду і ставки податку/збору (А,Б,В,Г,...) (1 символ)-->
+			<xs:element name="LETTER" type="TaxColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Відсоток податку/збору (15.2 цифри)-->
+			<xs:element name="PRC" type="Decimal2Column" minOccurs="1" maxOccurs="1"/>
+			<!--Ознака податку/збору, не включеного у вартість-->
+			<xs:element name="SIGN" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Сума для розрахування податку/збору (15.2 цифри)-->
+			<xs:element name="TURNOVER" type="Decimal2Column" minOccurs="1" maxOccurs="1"/>
+			<!--Сума податку/збору (15.2 цифри)-->
+			<xs:element name="SUM" type="Decimal2Column" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
+	</xs:complexType>
+
+	<!--Реквізити програмно-технічного комплексу самообслуговування (ПТКС)-->
+	<xs:complexType name="CPtks">
+		<xs:sequence>
+			<!--Податковий номер оператора ПТКС (64 символи)-->
+			<xs:element name="PTKSPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування оператора ПТКС (текст)-->
+			<xs:element name="PTKSNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер платіжної системи (64 символи)-->
+			<xs:element name="PAYSYSTEMPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування платіжної системи (текст)-->
+			<xs:element name="PAYSYSTEMNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер еквайра торговця (64 символи)-->
+			<xs:element name="ACQUIREPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування еквайра торговця (текст)-->
+			<xs:element name="ACQUIRENM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор транзакції, що надається еквайром та ідентифікує операцію в платіжній системі (128 символів)-->
+			<xs:element name="ACQUIRETRANSID" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор платіжного пристрою (128 символів)-->
+			<xs:element name="DEVICEID" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Реквізити електронного платіжного засобу (128 символів)-->
+			<xs:element name="EPZDETAILS" type="DGStr128" minOccurs="0" maxOccurs="1"/>
+			<!--Код авторизації (64 символи)-->
+			<xs:element name="AUTHCD" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Номер терміналу ПТКС (64 символи)-->
+			<xs:element name="TERMINALNUM" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Адреса розміщення терміналу ПТКС (текст)-->
+			<xs:element name="TERMINALADDR" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Номер операції ПТКС (64 символи)-->
+			<xs:element name="OPERNUM" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Номер операції у системі оператора ПТКС (64 символи)-->
+			<xs:element name="OPERSYSNUM" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Код банку (15 символів)-->
+			<xs:element name="BANKCD" type="DGStr15" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування банку одержувача, якщо присутній (текст)-->
+			<xs:element name="BANKNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--Продажі-->
+	<xs:complexType name="CBody">
+		<xs:sequence>
+			<xs:element name="ROW" type="TROWSBODY" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TROWSBODY">
+		<xs:sequence>
+			<!--Внутрішній код товару (64 символи)-->
+			<xs:element name="CODE" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Штриховий код товару (64 символи)-->
+			<xs:element name="BARCODE" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<xs:choice>
+				<!--Код товару згідно з УКТЗЕД (15 цифр)-->
+				<xs:element name="UKTZED" type="Str15Column" minOccurs="0" maxOccurs="1"/>
+				<!--Код послуги згідно з ДКПП (15 цифр)-->
+				<xs:element name="DKPP" type="Str15Column" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+			<!--Найменування товару, послуги, або операції (текст)-->
+			<xs:element name="NAME" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<!--Опис товару, послуги, або операції (текст)-->
+			<xs:element name="DESCRIPTION" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Код одиниці виміру згідно класифікатора (5 цифр)-->
+			<xs:element name="UNITCD" type="Long5Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування одиниці виміру (64 символи)-->
+			<xs:element name="UNITNM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Кількість/об’єм товару (15.3 цифри)-->
+			<xs:element name="AMOUNT" type="Decimal3Column_R" minOccurs="0" maxOccurs="1"/>
+			<!--Ціна за одиницю товару (15.2 цифри)-->
+			<xs:element name="PRICE" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Літерні позначення видів і ставок податків/зборів (15 символів)-->
+			<xs:element name="LETTERS" type="Str15Column" minOccurs="0" maxOccurs="1"/>
+			<!--Сума операції (15.2 цифри)-->
+			<xs:element name="COST" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--ПТКС-->
+			<!--Найменування отримувача, якщо присутній (текст)-->
+			<xs:element name="RECIPIENTNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Код отримувача, якщо присутній (12 символів)-->
+			<xs:element name="RECIPIENTIPN" type="HIPNColumn0" minOccurs="0" maxOccurs="1"/>
+			<!--Код банку отримувача, якщо присутній (15 символів)-->
+			<xs:element name="BANKCD" type="Str15Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування банку одержувача, якщо присутній (текст)-->
+			<xs:element name="BANKNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Номер рахунку в банку одержувача, якщо присутній (64 символи)-->
+			<xs:element name="BANKRS" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Реквізити платіжного засобу одержувача, якщо присутній (текст)-->
+			<xs:element name="PAYDETAILS" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Призначення платежу (одержувача) (128 символів)-->
+			<xs:element name="PAYPURPOSE" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування платника, якщо присутній (текст)-->
+			<xs:element name="PAYERNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікаційний код платника, якщо присутній (12 символів)-->
+			<xs:element name="PAYERIPN" type="HIPNColumn0" minOccurs="0" maxOccurs="1"/>
+			<!--Номер договору платника, якщо присутній (текст)-->
+			<xs:element name="PAYERPACTNUM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Реквізити платіжного засобу платника, якщо присутній (текст)-->
+			<xs:element name="PAYDETAILSP" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Підстава платежу платником, якщо присутній (текст)-->
+			<xs:element name="BASISPAY" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Тип виплати (зазначається тільки для чеку повернення) (1 символ)-->
+			<xs:element name="PAYOUTTYPE" type="LetterColumn" minOccurs="0" maxOccurs="1"/>
+			<!--АЗС-->
+			<!--Номер замовлення на відпуск пального з паливно-роздавальної колонки (128 символів)-->
+			<xs:element name="FUELORDERNUM" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування одиниці виміру пального (текст)-->
+			<xs:element name="FUELUNITNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Номер розхідного резервуару (64 символи)-->
+			<xs:element name="FUELTANKNUM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Номер паливно-роздавальної колонки (64 символи)-->
+			<xs:element name="FUELCOLUMNNUM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Номер крану паливно-роздавальної колонки (64 символи)-->
+			<xs:element name="FUELFAUCETNUM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Ознака продажу пального в режимі повірки-->
+			<xs:element name="FUELSALESIGN" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Валюта-->
+			<!--Код валюти (64 символи)-->
+			<xs:element name="VALCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Символьний код валюти (64 символів)-->
+			<xs:element name="VALSYMCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування валюти (текст)-->
+			<xs:element name="VALNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Тип операції (1 символ):
+			    0-Купівля; 1-Сторно купівлі; 2-Продаж; 3-Сторно продажу; 4-Зворотній обмін; 5-Конвертація; 6–Сторно зворотного обміну; 7–Сторно конвертації-->
+			<xs:element name="VALOPERTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Код валюти виданої (64 символи)-->
+			<xs:element name="VALOUTCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Символьний код валюти виданої (64 символів)-->
+			<xs:element name="VALOUTSYMCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Найменування валюти виданої (текст)-->
+			<xs:element name="VALOUTNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Курс операції (ХХХХ.ХХХХХХХХ) (64 символи)-->
+			<xs:element name="VALCOURSE" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Дата та час встановлення курсу (присутній тільки для чеку-довідки) (64 символи)-->
+			<xs:element name="VALCOURSEDATE" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Сума валюти по типу операцій вказаної у ‘VALOPERTYPE’ (іноземна валюта) (15.2 цифри)-->
+			<xs:element name="VALFOREIGNSUM" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Сума валюти по типу операцій вказаної у ‘VALOPERTYPE’ (національна валюта) (15.2 цифри)-->
+			<xs:element name="VALNATIONALSUM" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Сума комісії конвертації (15.2 цифри)-->
+			<xs:element name="VALCOMMISSION" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Кількість розрахункових документів по операції (присутній тільки для чеку-довідки) (5 цифр)-->
+			<xs:element name="VALOPERCNT" type="Long5Column" minOccurs="0" maxOccurs="1"/>
+			<!--Відмова від продажу-->
+			<xs:element name="VALREFUSESELL" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<!--Знижка/націнка-->
+			<!--Тип застосування знижки/націнки (1 символ):
+			    0–Попередній продаж, 1–Проміжний підсумок, 2–Спеціальна...-->
+			<xs:element name="USAGETYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Тип знижки/націнки (1 символ):
+			    0–Сумова, 1–Відсоткова-->
+			<xs:element name="DISCOUNTTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Проміжна сума чеку, на яку нараховується знижка/націнка (15.2 цифри)-->
+			<xs:element name="SUBTOTAL" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Порядковий номер операції, до якої відноситься знижка/націнка. Присутній, якщо знижка/націнка стосується лише однієї операції. (числовий)-->
+			<xs:element name="DISCOUNTNUM" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Податок, якщо знижка стосується лише одного податку (1 символ)-->
+			<xs:element name="DISCOUNTTAX" type="LetterColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Відсоток знижки, для відсоткових знижок (не зазначається при фіксованій сумі знижки) (15.2 цифри)-->
+			<xs:element name="DISCOUNTPERCENT" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Загальна сума знижки (15.2 цифри)-->
+			<xs:element name="DISCOUNTSUM" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
+	</xs:complexType>
+</xs:schema>
