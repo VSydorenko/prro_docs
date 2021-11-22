@@ -6,15 +6,15 @@
     <UID>87C8FDE8-FD91-4639-80EE-9E10A6BA1A9D</UID>
     <TIN>34554363</TIN>
     <IPN>123456789020</IPN>
-    <ORGNM>Тестовий платник 4</ORGNM>
-    <POINTNM>Інтернет-магазин автоаксесуарів</POINTNM>
-    <POINTADDR>УКРАЇНА, ВIННИЦЬКА ОБЛ., М. ВІННИЦЯ, вул. Янгеля, 4</POINTADDR>
+    <ORGNM>РўРµСЃС‚РѕРІРёР№ РїР»Р°С‚РЅРёРє 4</ORGNM>
+    <POINTNM>Р†РЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅ Р°РІС‚РѕР°РєСЃРµСЃСѓР°СЂС–РІ</POINTNM>
+    <POINTADDR>РЈРљР РђР‡РќРђ, Р’IРќРќРР¦Р¬РљРђ РћР‘Р›., Рњ. Р’Р†РќРќРР¦РЇ, РІСѓР». РЇРЅРіРµР»СЏ, 4</POINTADDR>
     <ORDERDATE>13102020</ORDERDATE>
     <ORDERTIME>131816</ORDERTIME>
     <ORDERNUM>8</ORDERNUM>
     <CASHDESKNUM>121</CASHDESKNUM>
     <CASHREGISTERNUM>4000038158</CASHREGISTERNUM>
-    <CASHIER>Тестовий платник 4 (Тест)</CASHIER>
+    <CASHIER>РўРµСЃС‚РѕРІРёР№ РїР»Р°С‚РЅРёРє 4 (РўРµСЃС‚)</CASHIER>
     <VER>0</VER>
     <ORDERTAXNUM>195865</ORDERTAXNUM>
   </CHECKHEAD>
@@ -26,7 +26,7 @@
   <CHECKPAY>
     <ROW ROWNUM="1">
       <PAYFORMCD>0</PAYFORMCD>
-      <PAYFORMNM>ГОТІВКА</PAYFORMNM>
+      <PAYFORMNM>Р“РћРўР†Р’РљРђ</PAYFORMNM>
       <SUM>12.60</SUM>
       <PROVIDED>20.00</PROVIDED>
       <REMAINS>7.40</REMAINS>
@@ -35,8 +35,8 @@
   <CHECKTAX>
     <ROW ROWNUM="1">
       <TYPE>0</TYPE>
-      <NAME>ПДВ</NAME>
-      <LETTER>А</LETTER>
+      <NAME>РџР”Р’</NAME>
+      <LETTER>Рђ</LETTER>
       <PRC>20.00</PRC>
       <TURNOVER>12.57</TURNOVER>
       <SUM>2.09</SUM>
@@ -46,11 +46,11 @@
     <ROW ROWNUM="1">
       <CODE>10</CODE>
       <UKTZED>2008999100</UKTZED>
-      <NAME>Мыло Детское</NAME>
-      <UNITNM>шт</UNITNM>
+      <NAME>РњС‹Р»Рѕ Р”РµС‚СЃРєРѕРµ</NAME>
+      <UNITNM>С€С‚</UNITNM>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>12.57</PRICE>
-      <LETTERS>А</LETTERS>
+      <LETTERS>Рђ</LETTERS>
       <COST>12.57</COST>
     </ROW>
   </CHECKBODY>

@@ -4,15 +4,15 @@
     <UID>0BCD7495-E1B0-4124-B4AE-C566AF0BF936</UID>
     <TIN>99900000</TIN>
     <IPN>999000000009</IPN>
-    <ORGNM>ТОВ "Тест"</ORGNM>
-    <POINTNM>Кафе "Пончик"</POINTNM>
-    <POINTADDR>ПІВНІЧНО-ЗАХІДНА ЧАСТИНА ШЕЛЬФУ ЧОРНОГО МОРЯ</POINTADDR>
+    <ORGNM>РўРћР’ "РўРµСЃС‚"</ORGNM>
+    <POINTNM>РљР°С„Рµ "РџРѕРЅС‡РёРє"</POINTNM>
+    <POINTADDR>РџР†Р’РќР†Р§РќРћ-Р—РђРҐР†Р”РќРђ Р§РђРЎРўРРќРђ РЁР•Р›Р¬Р¤РЈ Р§РћР РќРћР“Рћ РњРћР РЇ</POINTADDR>
     <ORDERDATE>25112020</ORDERDATE>
     <ORDERTIME>103540</ORDERTIME>
     <ORDERNUM>494</ORDERNUM>
     <CASHDESKNUM>1</CASHDESKNUM>
     <CASHREGISTERNUM>4000004601</CASHREGISTERNUM>
-    <CASHIER>Печатка №55555 для РРО Товариство з обмеженою відповідальністю "</CASHIER>
+    <CASHIER>РџРµС‡Р°С‚РєР° в„–55555 РґР»СЏ Р Р Рћ РўРѕРІР°СЂРёСЃС‚РІРѕ Р· РѕР±РјРµР¶РµРЅРѕСЋ РІС–РґРїРѕРІС–РґР°Р»СЊРЅС–СЃС‚СЋ "</CASHIER>
     <VER>0</VER>
   </ZREPHEAD>
   <ZREPREALIZ>
@@ -21,15 +21,15 @@
     <PAYFORMS>
       <ROW ROWNUM="1">
         <PAYFORMCD>1</PAYFORMCD>
-        <PAYFORMNM>КАРТКА</PAYFORMNM>
+        <PAYFORMNM>РљРђР РўРљРђ</PAYFORMNM>
         <SUM>2681.30</SUM>
       </ROW>
     </PAYFORMS>
     <TAXES>
       <ROW ROWNUM="1">
         <TYPE>0</TYPE>
-        <NAME>ПДВ</NAME>
-        <LETTER>А</LETTER>
+        <NAME>РџР”Р’</NAME>
+        <LETTER>Рђ</LETTER>
         <PRC>20.00</PRC>
         <TURNOVER>1033.29</TURNOVER>
         <SOURCESUM>1019.67</SOURCESUM>
@@ -37,8 +37,8 @@
       </ROW>
       <ROW ROWNUM="2">
         <TYPE>0</TYPE>
-        <NAME>ПДВ</NAME>
-        <LETTER>В</LETTER>
+        <NAME>РџР”Р’</NAME>
+        <LETTER>Р’</LETTER>
         <PRC>0.00</PRC>
         <TURNOVER>1122.99</TURNOVER>
         <SOURCESUM>1122.99</SOURCESUM>
@@ -46,8 +46,8 @@
       </ROW>
       <ROW ROWNUM="3">
         <TYPE>1</TYPE>
-        <NAME>Акциз</NAME>
-        <LETTER>Г</LETTER>
+        <NAME>РђРєС†РёР·</NAME>
+        <LETTER>Р“</LETTER>
         <PRC>5.00</PRC>
         <TURNOVER>810.91</TURNOVER>
         <SOURCESUM>810.91</SOURCESUM>

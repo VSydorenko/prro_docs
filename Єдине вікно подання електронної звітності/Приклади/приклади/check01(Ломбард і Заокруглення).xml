@@ -6,16 +6,16 @@
     <UID>d9c74e8e-34c2-4465-b1b6-86b7e73afcbd</UID>
     <TIN>34554363</TIN>
     <IPN>123456789020</IPN>
-    <ORGNM>Тестовий платник 4</ORGNM>
-    <POINTNM>Магазин Іван-Тест</POINTNM>
-    <POINTADDR>УКРАЇНА, СУМСЬКА ОБЛ., М. СУМИ, вул. Соборна 1</POINTADDR>
+    <ORGNM>РўРµСЃС‚РѕРІРёР№ РїР»Р°С‚РЅРёРє 4</ORGNM>
+    <POINTNM>РњР°РіР°Р·РёРЅ Р†РІР°РЅ-РўРµСЃС‚</POINTNM>
+    <POINTADDR>РЈРљР РђР‡РќРђ, РЎРЈРњРЎР¬РљРђ РћР‘Р›., Рњ. РЎРЈРњР, РІСѓР». РЎРѕР±РѕСЂРЅР° 1</POINTADDR>
     <ORDERDATE>30082021</ORDERDATE>
     <ORDERTIME>135200</ORDERTIME>
     <ORDERNUM>13984</ORDERNUM>
     <CASHDESKNUM>24</CASHDESKNUM>
     <CASHREGISTERNUM>4000066879</CASHREGISTERNUM>
-    <CASHIER>Для РРО № 4000066879</CASHIER>
-    <COMMENT>Спасибо за то что выбрали нас!</COMMENT>
+    <CASHIER>Р”Р»СЏ Р Р Рћ в„– 4000066879</CASHIER>
+    <COMMENT>РЎРїР°СЃРёР±Рѕ Р·Р° С‚Рѕ С‡С‚Рѕ РІС‹Р±СЂР°Р»Рё РЅР°СЃ!</COMMENT>
     <VER>1</VER>
   </CHECKHEAD>
   <CHECKTOTAL>
@@ -27,7 +27,7 @@
   <CHECKPAY>
     <ROW ROWNUM="1">
       <PAYFORMCD>0</PAYFORMCD>
-      <PAYFORMNM>Готівка</PAYFORMNM>
+      <PAYFORMNM>Р“РѕС‚С–РІРєР°</PAYFORMNM>
       <SUM>-2991.00</SUM>
       <PROVIDED>-2991.00</PROVIDED>
     </ROW>
@@ -35,8 +35,8 @@
   <CHECKTAX>
     <ROW ROWNUM="1">
       <TYPE>0</TYPE>
-      <NAME>ПДВ</NAME>
-      <LETTER>Ж</LETTER>
+      <NAME>РџР”Р’</NAME>
+      <LETTER>Р–</LETTER>
       <PRC>0.00</PRC>
       <SIGN>false</SIGN>
       <TURNOVER>2991.02</TURNOVER>
@@ -46,31 +46,31 @@
   </CHECKTAX>
   <CHECKBODY>
     <ROW ROWNUM="1">
-      <NAME>повернення фінкредиту: або одержано платіж від третьої особи в рахунок виконання забов'язень</NAME>
+      <NAME>РїРѕРІРµСЂРЅРµРЅРЅСЏ С„С–РЅРєСЂРµРґРёС‚Сѓ: Р°Р±Рѕ РѕРґРµСЂР¶Р°РЅРѕ РїР»Р°С‚С–Р¶ РІС–Рґ С‚СЂРµС‚СЊРѕС— РѕСЃРѕР±Рё РІ СЂР°С…СѓРЅРѕРє РІРёРєРѕРЅР°РЅРЅСЏ Р·Р°Р±РѕРІ'СЏР·РµРЅСЊ</NAME>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>2828.60</PRICE>
-      <LETTERS>Ж</LETTERS>
+      <LETTERS>Р–</LETTERS>
       <COST>2828.60</COST>
       <PWNDIR>false</PWNDIR>
-      <COMMENT>ДОН0171002460</COMMENT>
+      <COMMENT>Р”РћРќ0171002460</COMMENT>
     </ROW>
     <ROW ROWNUM="2">
-      <NAME>або одержано платіж від третьої особи в рахунок виконання забов'язень % за користування:</NAME>
+      <NAME>Р°Р±Рѕ РѕРґРµСЂР¶Р°РЅРѕ РїР»Р°С‚С–Р¶ РІС–Рґ С‚СЂРµС‚СЊРѕС— РѕСЃРѕР±Рё РІ СЂР°С…СѓРЅРѕРє РІРёРєРѕРЅР°РЅРЅСЏ Р·Р°Р±РѕРІ'СЏР·РµРЅСЊ % Р·Р° РєРѕСЂРёСЃС‚СѓРІР°РЅРЅСЏ:</NAME>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>96.78</PRICE>
-      <LETTERS>Ж</LETTERS>
+      <LETTERS>Р–</LETTERS>
       <COST>96.78</COST>
       <PWNDIR>false</PWNDIR>
-      <COMMENT>ДОН0171002460</COMMENT>
+      <COMMENT>Р”РћРќ0171002460</COMMENT>
     </ROW>
     <ROW ROWNUM="3">
-      <NAME>страховий платіж:</NAME>
+      <NAME>СЃС‚СЂР°С…РѕРІРёР№ РїР»Р°С‚С–Р¶:</NAME>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>65.64</PRICE>
-      <LETTERS>Ж</LETTERS>
+      <LETTERS>Р–</LETTERS>
       <COST>65.64</COST>
       <PWNDIR>false</PWNDIR>
-      <COMMENT>ДОН0171002460</COMMENT>
+      <COMMENT>Р”РћРќ0171002460</COMMENT>
     </ROW>
   </CHECKBODY>
 </CHECK>

@@ -7,14 +7,14 @@
     <TIN>1212031212</TIN>
     <IPN>001212031212</IPN>
     <ORGNM>test</ORGNM>
-    <POINTNM>Силосна траншея</POINTNM>
-    <POINTADDR>УКРАЇНА, АВТОНОМНА РЕСПУБЛІКА КРИМ Чернігівька обл.с.Шабалинів</POINTADDR>
+    <POINTNM>РЎРёР»РѕСЃРЅР° С‚СЂР°РЅС€РµСЏ</POINTNM>
+    <POINTADDR>РЈРљР РђР‡РќРђ, РђР’РўРћРќРћРњРќРђ Р Р•РЎРџРЈР‘Р›Р†РљРђ РљР РРњ Р§РµСЂРЅС–РіС–РІСЊРєР° РѕР±Р».СЃ.РЁР°Р±Р°Р»РёРЅС–РІ</POINTADDR>
     <ORDERDATE>13102020</ORDERDATE>
     <ORDERTIME>161105</ORDERTIME>
     <ORDERNUM>133</ORDERNUM>
     <CASHDESKNUM>1014</CASHDESKNUM>
     <CASHREGISTERNUM>4000001614</CASHREGISTERNUM>
-    <CASHIER>Павленко П. П.</CASHIER>
+    <CASHIER>РџР°РІР»РµРЅРєРѕ Рџ. Рџ.</CASHIER>
     <VER>1</VER>
   </CHECKHEAD>
   <CHECKTOTAL>
@@ -24,15 +24,15 @@
   <CHECKPAY>
     <ROW ROWNUM="1">
       <PAYFORMCD>0</PAYFORMCD>
-      <PAYFORMNM>ГОТІВКА</PAYFORMNM>
+      <PAYFORMNM>Р“РћРўР†Р’РљРђ</PAYFORMNM>
       <SUM>210.00</SUM>
     </ROW>
   </CHECKPAY>
   <CHECKTAX>
     <ROW ROWNUM="1">
       <TYPE>0</TYPE>
-      <NAME>ПДВ</NAME>
-      <LETTER>А</LETTER>
+      <NAME>РџР”Р’</NAME>
+      <LETTER>Рђ</LETTER>
       <PRC>20.00</PRC>
       <TURNOVER>100.00</TURNOVER>
       <SOURCESUM>50.00</SOURCESUM>
@@ -40,8 +40,8 @@
     </ROW>
     <ROW ROWNUM="2">
       <TYPE>0</TYPE>
-      <NAME>ПДВ</NAME>
-      <LETTER>Б</LETTER>
+      <NAME>РџР”Р’</NAME>
+      <LETTER>Р‘</LETTER>
       <PRC>7.00</PRC>
       <TURNOVER>200.00</TURNOVER>
       <SOURCESUM>160.00</SOURCESUM>
@@ -51,12 +51,12 @@
   <CHECKBODY>
     <ROW ROWNUM="1">
       <CODE>12345</CODE>
-      <NAME>морква</NAME>
+      <NAME>РјРѕСЂРєРІР°</NAME>
       <UNITCD>2009</UNITCD>
-      <UNITNM>шт</UNITNM>
+      <UNITNM>С€С‚</UNITNM>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>100.00</PRICE>
-      <LETTERS>А</LETTERS>
+      <LETTERS>Рђ</LETTERS>
       <COST>100.00</COST>
       <DISCOUNTTYPE>1</DISCOUNTTYPE>
       <DISCOUNTPERCENT>50.00</DISCOUNTPERCENT>
@@ -64,12 +64,12 @@
     </ROW>
     <ROW ROWNUM="2">
       <CODE>54321</CODE>
-      <NAME>цибуля</NAME>
+      <NAME>С†РёР±СѓР»СЏ</NAME>
       <UNITCD>2009</UNITCD>
-      <UNITNM>шт</UNITNM>
+      <UNITNM>С€С‚</UNITNM>
       <AMOUNT>1.000</AMOUNT>
       <PRICE>200.00</PRICE>
-      <LETTERS>Б</LETTERS>
+      <LETTERS>Р‘</LETTERS>
       <COST>200.00</COST>
       <DISCOUNTTYPE>1</DISCOUNTTYPE>
       <DISCOUNTPERCENT>20.00</DISCOUNTPERCENT>
