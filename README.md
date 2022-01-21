@@ -30,12 +30,12 @@
 
 Тут розміщена документація, приклади та схеми XSD для протоколу ЄВПЕЗ:
 
-<https://tax.gov.ua/baneryi/programni-rro/opis-ari-fiskalnogo-servera-kontrolyuyuchogo-organu/opis-ari-fiskalnogo-servera-kontrolyuyuchogo-organu/>
+<https://tax.gov.ua/baneryi/programni-rro/opis-ari-fiskalnogo-servera/opis-ari--kontrolyuyuchogo-organu/>
 
 # Протокол ФСКО
 
 Тут розміщена документація для взаємодії із сервером по протоколу gRPC:
-<https://tax.gov.ua/baneryi/programni-rro/opis-ari-fiskalnogo-servera-kontrolyuyuchogo-organu/opis-ari-fiskalnogo-servera--elektronniy-kabinet-/>
+<https://tax.gov.ua/baneryi/programni-rro/opis-ari-fiskalnogo-servera/opis-ari--elektronniy-kabinet-/>
 
 Даний протокол використовується в основному для фізичних РРО
 
