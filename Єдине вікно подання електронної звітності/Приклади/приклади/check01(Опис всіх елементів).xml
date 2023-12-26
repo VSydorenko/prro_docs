@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+﻿<?xml version="1.0" encoding="windows-1251"?>
 <CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
 	<!--Заголовок-->
 	<CHECKHEAD>
@@ -69,6 +69,15 @@
 		<DISCOUNTPERCENT>0.00</DISCOUNTPERCENT>
 		<!--Загальна сума знижки (15.2 цифри)-->
 		<DISCOUNTSUM>0.00</DISCOUNTSUM>
+		<!--Тип часткової сплати (числовий):
+		    1-Передплата, 2-Остаточний розрахунок, 3-Чергова сплата-->
+        <PARTPAYTYPE>2</PARTPAYTYPE>
+		<!--Відсоток часткової сплати (15.2 цифри)-->
+        <PARTPAYPERCENT>10.00</PARTPAYPERCENT>
+		<!--Cума часткової сплати (15.2 цифри)-->
+        <PARTPAYSUM>20.00</PARTPAYSUM>
+		<!--Фіскальний номер чека часткової сплати типу "Передплата" (для типів часткової сплати 2 та 3) (128 символів)-->
+        <PARTPAYORDPREPAYNUM>1317959</PARTPAYORDPREPAYNUM>
 	</CHECKTOTAL>
 
 	<!--Реалізація-->
@@ -268,6 +277,8 @@
 			<DISCOUNTPERCENT>0.00</DISCOUNTPERCENT>
 			<!--Загальна сума знижки (15.2 цифри)-->
 			<DISCOUNTSUM>0.00</DISCOUNTSUM>
+			<!--Cума часткової сплати (15.2 цифри)-->
+            <PARTPAYSUM>0.00</PARTPAYSUM>
 		</ROW>
 		<ROW ROWNUM="2">
 			<CODE>76543</CODE>
