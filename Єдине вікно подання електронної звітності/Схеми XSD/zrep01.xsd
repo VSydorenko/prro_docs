@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+﻿<?xml version="1.0" encoding="windows-1251"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:simpleType name="DGDrfo">
@@ -213,7 +213,7 @@
 			<xs:element name="TOTALCURRENCYSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
 			<!--Загальна сума комісії від переказів коштів (15.2 цифри)-->
 			<xs:element name="TOTALCURRENCYCOMMISSION" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
-			<!--Підсумки по формам оплати-->
+			<!--Підсумки по формах оплати-->
 			<xs:element name="PAYFORMS" type="ZPayForms" minOccurs="0" maxOccurs="1"/>
 			<!--Податки/Збори-->
 			<xs:element name="TAXES" type="ZTax" minOccurs="0" maxOccurs="1"/>
@@ -272,7 +272,7 @@
 			<xs:element name="VALNUM" type="Decimal0Column" minOccurs="0" maxOccurs="1"/>
 			<!--Код валюти (числовий)-->
 			<xs:element name="VALCD" type="PositiveIntegerColumn" minOccurs="1" maxOccurs="1"/>
-			<!--Символьний код валюти (64 символів)-->
+			<!--Символьний код валюти (64 символи)-->
 			<xs:element name="VALSYMCD" type="Str64Column" minOccurs="1" maxOccurs="1"/>
 			<!--Найменування іноземної валюти (текст)-->
 			<xs:element name="VALNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
@@ -334,7 +334,7 @@
 		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
 	</xs:complexType>
 
-	<!--Підсумки по формам оплати-->
+	<!--Підсумки по формах оплати-->
 	<xs:complexType name="ZPayForms">
 		<xs:sequence>
 			<xs:element name="ROW" type="TROWSPAYFORMS" minOccurs="1" maxOccurs="unbounded"/>
@@ -451,7 +451,7 @@
 		<xs:sequence>
 			<!--Найменування товару (пального) (текст)-->
 			<xs:element name="NAME" type="StrColumn" minOccurs="1" maxOccurs="1"/>
-			<!--Номер розхідного резервуару (64 символи)-->
+			<!--Номер розхідного резервуара (64 символи)-->
 			<xs:element name="TANKNUM" type="Str64Column" minOccurs="1" maxOccurs="1"/>
 			<!--Номер паливно-роздавальної колонки (64 символи)-->
 			<xs:element name="COLUMNNUM" type="Str64Column" minOccurs="0" maxOccurs="1"/>

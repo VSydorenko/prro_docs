@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+﻿<?xml version="1.0" encoding="windows-1251"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:simpleType name="DGDrfo">
@@ -21,6 +21,13 @@
 		<!--17.02.2011 модифіковано відповідно до листа від 17.02.11 № 28-0517/61-->
 	</xs:simpleType>
 
+	<!--Загальний тип "Код зовнішньоекономічної діяльності (УКТЗЕД)"-->
+	<xs:simpleType name="DGUKTZED">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:pattern value="([0-9]){10}|([0-9]){8}|([0-9]){6}|(00[0-9]{3})|([0-9]){4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!--Загальний тип "Код послуги згідно з Державним класифікатором продукції та послуг (ДКПП)"-->
 	<xs:simpleType name="DGDKPP">
 		<xs:annotation>
@@ -149,6 +156,12 @@
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="UKTZEDColumn">
+		<xs:simpleContent>
+			<xs:extension base="DGUKTZED"> </xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="StrColumn">
 		<xs:simpleContent>
 			<xs:extension base="xs:string"> </xs:extension>
@@ -209,6 +222,12 @@
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="NonNegativeIntegerColumn">
+		<xs:simpleContent>
+			<xs:extension base="xs:nonNegativeInteger"> </xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="PositiveIntegerColumn">
 		<xs:simpleContent>
 			<xs:extension base="xs:positiveInteger"> </xs:extension>
@@ -383,6 +402,15 @@
 			<xs:element name="DISCOUNTPERCENT" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
 			<!--Загальна сума знижки/націнки (15.2 цифри)-->
 			<xs:element name="DISCOUNTSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Тип часткової сплати (числовий):
+			    1-Передплата, 2-Остаточний розрахунок, 3-Чергова сплата-->
+			<xs:element name="PARTPAYTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Відсоток часткової сплати (15.2 цифри)-->
+			<xs:element name="PARTPAYPERCENT" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Cума часткової сплати (15.2 цифри)-->
+			<xs:element name="PARTPAYSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
+			<!--Фіскальний номер чека часткової сплати типу "Передплата" (для типів часткової сплати 2 та 3) (128 символів)-->
+			<xs:element name="PARTPAYORDPREPAYNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -396,7 +424,7 @@
 		<xs:sequence>
 			<!--Код форми оплати (числовий):
 			    0–Готівка, 1–Банківська картка, 2-Попередня оплата, 3-Кредит, ...-->
-			<xs:element name="PAYFORMCD" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PAYFORMCD" type="NonNegativeIntegerColumn" minOccurs="1" maxOccurs="1"/>
 			<!--Найменування форми оплати (128 символів)-->
 			<xs:element name="PAYFORMNM" type="StrColumn" minOccurs="1" maxOccurs="1"/>
 			<!--Сума оплати (15.2 цифри)-->
@@ -419,12 +447,12 @@
 	</xs:complexType>
 	<xs:complexType name="TROWSPAYSYS">
 		<xs:sequence>
-			<!--Податковий номер платіжної системи (64 символи)-->
-			<xs:element name="TAXNUM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер платіжної системи (128 символів)-->
+			<xs:element name="TAXNUM" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування платіжної системи (текст)-->
 			<xs:element name="NAME" type="StrColumn" minOccurs="0" maxOccurs="1"/>
-			<!--Податковий номер еквайра торговця (64 символи)-->
-			<xs:element name="ACQUIREPN" type="Str64Column" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер еквайра торговця (128 символів)-->
+			<xs:element name="ACQUIREPN" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування еквайра торговця (текст)-->
 			<xs:element name="ACQUIRENM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Ідентифікатор транзакції, що надається еквайром та ідентифікує операцію в платіжній системі (128 символів)-->
@@ -457,7 +485,7 @@
 		<xs:sequence>
 			<!--Код виду податку/збору (числовий):
 			    0-ПДВ,1-Акциз,2-ПФ...-->
-			<xs:element name="TYPE" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TYPE" type="NonNegativeIntegerColumn" minOccurs="1" maxOccurs="1"/>
 			<!--Найменування виду податку/збору (64 символи)-->
 			<xs:element name="NAME" type="Str64Column" minOccurs="1" maxOccurs="1"/>
 			<!--Літерне позначення виду і ставки податку/збору (А,Б,В,Г,...) (1 символ)-->
@@ -481,16 +509,16 @@
 	<!--Реквізити програмно-технічного комплексу самообслуговування (ПТКС)-->
 	<xs:complexType name="CPtks">
 		<xs:sequence>
-			<!--Податковий номер оператора ПТКС (64 символи)-->
-			<xs:element name="PTKSPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер оператора ПТКС (128 символів)-->
+			<xs:element name="PTKSPN" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування оператора ПТКС (текст)-->
 			<xs:element name="PTKSNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<!--Податковий номер платіжної системи (64 символи)-->
-			<xs:element name="PAYSYSTEMPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер платіжної системи (128 символів)-->
+			<xs:element name="PAYSYSTEMPN" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування платіжної системи (текст)-->
 			<xs:element name="PAYSYSTEMNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<!--Податковий номер еквайра торговця (64 символи)-->
-			<xs:element name="ACQUIREPN" type="DGStr64" minOccurs="0" maxOccurs="1"/>
+			<!--Податковий номер еквайра торговця (128 символів)-->
+			<xs:element name="ACQUIREPN" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування еквайра торговця (текст)-->
 			<xs:element name="ACQUIRENM" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<!--Ідентифікатор транзакції, що надається еквайром та ідентифікує операцію в платіжній системі (128 символів)-->
@@ -533,16 +561,16 @@
 			<!--Штриховий код товару (64 символи)-->
 			<xs:element name="BARCODE" type="Str64Column" minOccurs="0" maxOccurs="1"/>
 			<xs:choice>
-				<!--Код товару згідно з УКТЗЕД (15 цифр)-->
-				<xs:element name="UKTZED" type="PositiveIntegerColumn" minOccurs="0" maxOccurs="1"/>
-				<!--Код послуги згідно з ДКПП (15 символів)-->
+				<!--Код товару згідно з УКТЗЕД-->
+				<xs:element name="UKTZED" type="UKTZEDColumn" minOccurs="0" maxOccurs="1"/>
+				<!--Код послуги згідно з ДКПП-->
 				<xs:element name="DKPP" type="DKPPColumn" minOccurs="0" maxOccurs="1"/>
 			</xs:choice>
 			<!--Найменування товару, послуги або операції (текст)-->
 			<xs:element name="NAME" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Опис товару, послуги або операції (текст)-->
 			<xs:element name="DESCRIPTION" type="StrColumn" minOccurs="0" maxOccurs="1"/>
-			<!--Код одиниці виміру згідно класифікатора (5 цифр)-->
+			<!--Код одиниці виміру згідно з класифікатором (5 цифр)-->
 			<xs:element name="UNITCD" type="Num5Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування одиниці виміру (64 символи)-->
 			<xs:element name="UNITNM" type="Str64Column" minOccurs="0" maxOccurs="1"/>
@@ -552,7 +580,7 @@
 			<xs:element name="PRICE" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
 			<!--Літерні позначення видів і ставок податків/зборів (15 символів)-->
 			<xs:element name="LETTERS" type="Str15Column" minOccurs="0" maxOccurs="1"/>
-			<!--Сума операції (15.2 цифри)-->
+			<!--Сума операції (без урахування знижки) (15.2 цифри)-->
 			<xs:element name="COST" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
 			<!--ПТКС-->
 			<!--Найменування отримувача, якщо присутній (текст)-->
@@ -597,16 +625,16 @@
 			<!--Валюта-->
 			<!--Код валюти (числовий)-->
 			<xs:element name="VALCD" type="PositiveIntegerColumn" minOccurs="0" maxOccurs="1"/>
-			<!--Символьний код валюти (64 символів)-->
+			<!--Символьний код валюти (64 символи)-->
 			<xs:element name="VALSYMCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування валюти (текст)-->
 			<xs:element name="VALNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Тип операції (1 символ):
 			    0-Купівля; 1-Сторно купівлі; 2-Продаж; 3-Сторно продажу; 4-Зворотній обмін; 5-Конвертація; 6–Сторно зворотного обміну; 7–Сторно конвертації-->
-			<xs:element name="VALOPERTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="VALOPERTYPE" type="NonNegativeIntegerColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Код валюти виданої (числовий)-->
 			<xs:element name="VALOUTCD" type="PositiveIntegerColumn" minOccurs="0" maxOccurs="1"/>
-			<!--Символьний код валюти виданої (64 символів)-->
+			<!--Символьний код валюти виданої (64 символи)-->
 			<xs:element name="VALOUTSYMCD" type="Str64Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування валюти виданої (текст)-->
 			<xs:element name="VALOUTNM" type="StrColumn" minOccurs="0" maxOccurs="1"/>
@@ -630,22 +658,24 @@
 			<!--Знижка/націнка-->
 			<!--Тип застосування знижки/націнки (числовий):
 			    0–Попередній продаж, 1–Проміжний підсумок, 2–Спеціальна...-->
-			<xs:element name="USAGETYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="USAGETYPE" type="NonNegativeIntegerColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Тип знижки/націнки (числовий):
 			    0–Сумова, 1–Відсоткова-->
-			<xs:element name="DISCOUNTTYPE" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DISCOUNTTYPE" type="NonNegativeIntegerColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Проміжна сума чеку, на яку нараховується знижка/націнка (15.2 цифри)-->
 			<xs:element name="SUBTOTAL" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
 			<!--Порядковий номер операції, до якої відноситься знижка/націнка. Присутній, якщо знижка/націнка стосується лише однієї операції. (числовий)-->
-			<xs:element name="DISCOUNTNUM" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DISCOUNTNUM" type="PositiveIntegerColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Податок, якщо знижка/націнка стосується лише одного податку (1 символ)-->
 			<xs:element name="DISCOUNTTAX" type="TaxColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Відсоток знижки/націнки, для відсоткових знижок/націнок (не зазначається при фіксованій сумі знижки/націнки) (15.2 цифри)-->
 			<xs:element name="DISCOUNTPERCENT" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
 			<!--Загальна сума знижки/націнки (15.2 цифри)-->
 			<xs:element name="DISCOUNTSUM" type="Decimal2Column" minOccurs="0" maxOccurs="1"/>
+			<!--Cума часткової сплати (15.2 цифри)-->
+			<xs:element name="PARTPAYSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
 			<!--Коментар-->
-			<xs:element name="COMMENT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="COMMENT" type="StrColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Акцизні марки-->
 			<xs:element name="EXCISELABELS" type="CExciseLabels" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
@@ -660,7 +690,7 @@
 	</xs:complexType>
 	<xs:complexType name="TROWSEXCISELABEL">
 		<xs:sequence>
-			<!--Серія та номер марки акцизного податку-->
+			<!--Серія та номер марки акцизного податку (64 символи)-->
 			<xs:element name="EXCISELABEL" type="Str64Column" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="ROWNUM" type="rowInt" use="required"/>
