@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+﻿<?xml version="1.0" encoding="windows-1251"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:simpleType name="DGStr128">
