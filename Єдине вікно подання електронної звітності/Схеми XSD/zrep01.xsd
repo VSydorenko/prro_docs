@@ -197,9 +197,9 @@
 		<xs:sequence>
 			<!--Загальна сума (15.2 цифри)-->
 			<xs:element name="SUM" type="DGDecimal2" minOccurs="1" maxOccurs="1"/>
-			<!--Загальна сума коштів, виданих клієнту ломбарда (15.2 цифри)-->
+			<!--Загальна сума коштів, виданих клієнту ломбарду (15.2 цифри)-->
 			<xs:element name="PWNSUMISSUED" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
-			<!--Загальна сума коштів, одержаних від клієнта ломбарда (15.2 цифри)-->
+			<!--Загальна сума коштів, одержаних від клієнта ломбарду (15.2 цифри)-->
 			<xs:element name="PWNSUMRECEIVED" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
 			<!--Заокруглення (15.2 цифри) (наприклад, 0.71)-->
 			<xs:element name="RNDSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
@@ -207,6 +207,10 @@
 			<xs:element name="NORNDSUM" type="DGDecimal2" minOccurs="0" maxOccurs="1"/>
 			<!--Кількість чеків (числовий)-->
 			<xs:element name="ORDERSCNT" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Кількість чеків видачі коштів клієнтам ломбарду (числовий)-->
+			<xs:element name="PWNORDERSCNTISSUED" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Кількість чеків одержання коштів від клієнтів ломбарду (числовий)-->
+			<xs:element name="PWNORDERSCNTRECEIVED" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 			<!--Кількість операцій переказу коштів (числовий)-->
 			<xs:element name="TOTALCURRENCYCOST" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 			<!--Загальна сума переказів коштів (15.2 цифри)-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+﻿<?xml version="1.0" encoding="windows-1251"?>
 <ZREP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zrep01.xsd">
 	<!--Заголовок-->
 	<ZREPHEAD>
@@ -36,12 +36,16 @@
 	<ZREPREALIZ>
 		<!--Загальна сума (15.2 цифри)-->
 		<SUM>667.11</SUM>
-		<!--Загальна сума коштів, виданих клієнту ломбарда (15.2 цифри)-->
+		<!--Загальна сума коштів, виданих клієнту ломбарду (15.2 цифри)-->
 		<PWNSUMISSUED>67.11</PWNSUMISSUED>
-		<!--Загальна сума коштів, одержаних від клієнта ломбарда (15.2 цифри)-->
+		<!--Загальна сума коштів, одержаних від клієнта ломбарду (15.2 цифри)-->
 		<PWNSUMRECEIVED>7.11</PWNSUMRECEIVED>
 		<!---Кількість чеків (числовий)-->
 		<ORDERSCNT>13</ORDERSCNT>
+		<!--Кількість чеків видачі коштів клієнтам ломбарду (числовий)-->
+		<PWNORDERSCNTISSUED>9</PWNORDERSCNTISSUED>
+		<!--Кількість чеків одержання коштів від клієнтів ломбарду (числовий)-->
+		<PWNORDERSCNTRECEIVED>7</PWNORDERSCNTRECEIVED>
 		<!--Кількість операцій переказу коштів (числовий)-->
 		<TOTALCURRENCYCOST>4</TOTALCURRENCYCOST>
 		<!--Загальна сума переказів коштів (15.2 цифри)-->
