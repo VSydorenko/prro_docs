@@ -4,15 +4,28 @@ function ConvertXmlFiles($folderPath) {
     Get-ChildItem -Path $folderPath -Recurse | ForEach-Object {
         # Якщо це файл і його розширення .xml або .xsd, то конвертуємо його в UTF-8 з BOM
         if (-not $_.PSIsContainer -and ($_.Extension -eq '.xml' -or $_.Extension -eq '.xsd')) {
-            # Конвертуємо файл
-            $filePath = $_.FullName
-            $fileContent = Get-Content $filePath
-            $fileStreamWriter = New-Object System.IO.StreamWriter($filePath, $false, (New-Object System.Text.UTF8Encoding $true))
-            foreach ($line in $fileContent) {
-                $fileStreamWriter.WriteLine($line)
+            # Перевірка, чи файл вже має BOM
+            $hasBOM = $false
+            try {
+                $fileContent = Get-Content -LiteralPath $_.FullName -Encoding Byte -TotalCount 3
+                $hasBOM = ($fileContent -eq 0xEF)
+            } catch {
+                Write-Host "Помилка при зчитуванні файлу $($_.FullName): $_"
             }
-            $fileStreamWriter.Close()
-            Write-Host "Файл $filePath було успішно перетворено в UTF-8 з BOM"
+
+            if (-not $hasBOM) {
+                # Конвертуємо файл
+                $filePath = $_.FullName
+                $fileContent = Get-Content $filePath
+                $fileStreamWriter = New-Object System.IO.StreamWriter($filePath, $false, (New-Object System.Text.UTF8Encoding $true))
+                foreach ($line in $fileContent) {
+                    $fileStreamWriter.WriteLine($line)
+                }
+                $fileStreamWriter.Close()
+                Write-Host "Файл $filePath було успішно перетворено в UTF-8 з BOM"
+            } else {
+                Write-Host "Файл $($_.FullName) вже має BOM, пропускаємо конвертацію"
+            }
         }
     }
 }
