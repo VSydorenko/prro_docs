@@ -27,7 +27,7 @@
 			<xs:pattern value="([0-9]){10}|([0-9]){8}|([0-9]){6}|(00[0-9]{3})|([0-9]){4}"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<!--Загальний тип "Код послуги згідно з Державним класифікатором продукції та послуг (ДКПП)"-->
 	<xs:simpleType name="DGDKPP">
 		<xs:annotation>
@@ -70,15 +70,9 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="DGStr256">
+	<xs:simpleType name="DGStr15">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="256"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="DGStr128">
-		<xs:restriction base="xs:string">
-			<xs:maxLength value="128"/>
+			<xs:maxLength value="15"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -88,9 +82,21 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="DGStr15">
+	<xs:simpleType name="DGStr128">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="15"/>
+			<xs:maxLength value="128"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr256">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DGStr1024">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1024"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -161,7 +167,7 @@
 			<xs:extension base="DGUKTZED"> </xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	
+
 	<xs:complexType name="StrColumn">
 		<xs:simpleContent>
 			<xs:extension base="xs:string"> </xs:extension>
@@ -183,6 +189,12 @@
 	<xs:complexType name="Str128Column">
 		<xs:simpleContent>
 			<xs:extension base="DGStr128"> </xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Str1024Column">
+		<xs:simpleContent>
+			<xs:extension base="DGStr1024"> </xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 
@@ -227,7 +239,7 @@
 			<xs:extension base="xs:nonNegativeInteger"> </xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	
+
 	<xs:complexType name="PositiveIntegerColumn">
 		<xs:simpleContent>
 			<xs:extension base="xs:positiveInteger"> </xs:extension>
@@ -339,6 +351,11 @@
 			<xs:element name="CASHDESKNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
 			<!--Фіскальний номер програмного реєстратора розрахункових операцій (числовий)-->
 			<xs:element name="CASHREGISTERNUM" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+			<!--Фіскальний номер реєстратора розрахункових операцій, з якого проводилася операція продажу товару, що повертається
+				(зазначається тільки для чеків повернення) (числовий)-->
+			<xs:element name="ORDERRETCASHREGNUM" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<!--Дата операції продажу товару, що повертається (зазначається тільки для чеків повернення) (ддммрррр)-->
+			<xs:element name="ORDERRETDATE" type="DGDate" minOccurs="0" maxOccurs="1"/>
 			<!--Фіскальний номер чека, для якого здійснюється повернення (зазначається тільки для чеків повернення) (128 символів)-->
 			<xs:element name="ORDERRETNUM" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Фіскальний номер чека, для якого здійснюється сторнування (зазначається тільки для чеків сторнування) (128 символів)-->
@@ -451,6 +468,8 @@
 			<xs:element name="TAXNUM" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування платіжної системи (текст)-->
 			<xs:element name="NAME" type="StrColumn" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор еквайра торговця (128 символів)-->
+			<xs:element name="ACQUIREID" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Податковий номер еквайра торговця (128 символів)-->
 			<xs:element name="ACQUIREPN" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування еквайра торговця (текст)-->
@@ -517,6 +536,8 @@
 			<xs:element name="PAYSYSTEMPN" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування платіжної системи (текст)-->
 			<xs:element name="PAYSYSTEMNM" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!--Ідентифікатор еквайра торговця (128 символів)-->
+			<xs:element name="ACQUIREID" type="Str128Column" minOccurs="0" maxOccurs="1"/>
 			<!--Податковий номер еквайра торговця (128 символів)-->
 			<xs:element name="ACQUIREPN" type="DGStr128" minOccurs="0" maxOccurs="1"/>
 			<!--Найменування еквайра торговця (текст)-->
@@ -567,7 +588,7 @@
 				<xs:element name="DKPP" type="DKPPColumn" minOccurs="0" maxOccurs="1"/>
 			</xs:choice>
 			<!--Найменування товару, послуги або операції (текст)-->
-			<xs:element name="NAME" type="Str128Column" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NAME" type="Str1024Column" minOccurs="0" maxOccurs="1"/>
 			<!--Опис товару, послуги або операції (текст)-->
 			<xs:element name="DESCRIPTION" type="StrColumn" minOccurs="0" maxOccurs="1"/>
 			<!--Код одиниці виміру згідно з класифікатором (5 цифр)-->
