@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+    <CHECKHEAD>
+        <DOCTYPE>0</DOCTYPE>
+        <DOCSUBTYPE>0</DOCSUBTYPE>
+        <UID>C6B24B9F-D1DC-49F8-AB9D-BE9976B7951B</UID>
+        <TIN>34554363</TIN>
+        <IPN>123456789020</IPN>
+        <ORGNM>ТОВ "Тестування ПРРО"</ORGNM>
+        <POINTNM>Магазин "Тестування"</POINTNM>
+        <POINTADDR>УКРАЇНА, М.КИЇВ</POINTADDR>
+        <ORDERDATE>25022025</ORDERDATE>
+        <ORDERTIME>223545</ORDERTIME>
+        <ORDERNUM>4457</ORDERNUM>
+        <CASHDESKNUM>323</CASHDESKNUM>
+        <CASHREGISTERNUM>4000365578</CASHREGISTERNUM>
+        <CASHIER>Тест С. К.</CASHIER>
+        <VER>1</VER>
+    </CHECKHEAD>
+    <CHECKTOTAL>
+        <SUM>1296.00</SUM>
+    </CHECKTOTAL>
+    <CHECKTAX>
+        <ROW ROWNUM="1">
+            <TYPE>0</TYPE>
+            <NAME>ПДВ</NAME>
+            <LETTER>А</LETTER>
+            <PRC>20.00</PRC>
+            <TURNOVER>1296.00</TURNOVER>
+            <SOURCESUM>1296.00</SOURCESUM>
+            <SUM>216.00</SUM>
+        </ROW>
+    </CHECKTAX>
+    <CHECKDUTYFREE>
+        <ROW ROWNUM="1">
+            <PASSPORTDOС>KM 204321</PASSPORTDOС>
+            <PASSPORTCOUNTRY>GREAT BRITAIN</PASSPORTCOUNTRY>
+            <VALCD>978</VALCD>
+            <VALSYMCD>EUR</VALSYMCD>
+            <VALNM>євро</VALNM>
+            <VALCOURSE>43.20</VALCOURSE>
+            <SUM>30.00</SUM>
+        </ROW>
+    </CHECKDUTYFREE>
+    <CHECKBODY>
+        <ROW ROWNUM="1">
+            <CODE>250277</CODE>
+            <UKTZED>2402209020</UKTZED>
+            <NAME>Блок цигарок</NAME>
+            <UNITCD>2009</UNITCD>
+            <UNITNM>шт</UNITNM>
+            <AMOUNT>1.000</AMOUNT>
+            <TOBACCOWEIGHT>0.054</TOBACCOWEIGHT>
+            <TOBACCOQT>200</TOBACCOQT>
+            <PRICE>1296.00</PRICE>
+            <LETTERS>А</LETTERS>
+            <COST>1296.00</COST>
+        </ROW>
+    </CHECKBODY>
+</CHECK>
