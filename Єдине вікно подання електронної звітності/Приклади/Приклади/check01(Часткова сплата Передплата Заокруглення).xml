@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="windows-1251"?>
+<CHECK xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="check01.xsd">
+  <CHECKHEAD>
+    <DOCTYPE>0</DOCTYPE>
+    <DOCSUBTYPE>0</DOCSUBTYPE>
+    <UID>DE93DEAC-87B4-4C54-AB05-46E7555964F3</UID>
+    <TIN>00100100</TIN>
+    <ORGNM>ТОВ "Тестування ПРРО 00100100"</ORGNM>
+    <POINTNM>БУТИК "BELL&OK"</POINTNM>
+    <POINTADDR>УКРАЇНА, м. Киев, Адреса</POINTADDR>
+    <ORDERDATE>13112023</ORDERDATE>
+    <ORDERTIME>151911</ORDERTIME>
+    <ORDERNUM>2604</ORDERNUM>
+    <CASHDESKNUM>1</CASHDESKNUM>
+    <CASHREGISTERNUM>4000006017</CASHREGISTERNUM>
+    <CASHIER>Тест Д. И.</CASHIER>
+    <COMMENT>Залишок до сплати 33,66 грн.</COMMENT>
+    <VER>1</VER>
+  </CHECKHEAD>
+  <CHECKTOTAL>
+    <SUM>59.00</SUM>
+    <RNDSUM>0.04</RNDSUM>
+    <NORNDSUM>25.34</NORNDSUM>
+    <PARTPAYTYPE>1</PARTPAYTYPE>
+    <PARTPAYSUM>25.30</PARTPAYSUM>
+  </CHECKTOTAL>
+  <CHECKPAY>
+    <ROW ROWNUM="1">
+      <PAYFORMCD>0</PAYFORMCD>
+      <PAYFORMNM>ГОТІВКА</PAYFORMNM>
+      <SUM>25.30</SUM>
+    </ROW>
+  </CHECKPAY>
+  <CHECKBODY>
+    <ROW ROWNUM="1">
+      <CODE>00000146461</CODE>
+      <BARCODE>9786176793366</BARCODE>
+      <NAME>Книга Білі мухи налетіли</NAME>
+      <UNITCD>2009</UNITCD>
+      <UNITNM>шт</UNITNM>
+      <AMOUNT>1.000</AMOUNT>
+      <PRICE>59.00</PRICE>
+      <COST>59.00</COST>
+      <PARTPAYSUM>25.34</PARTPAYSUM>
+      <COMMENT>Аванс 25,34 грн.</COMMENT>
+    </ROW>
+  </CHECKBODY>
+</CHECK>

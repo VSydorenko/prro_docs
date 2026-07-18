@@ -7,21 +7,21 @@ function ConvertXmlFiles($folderPath) {
             # Перевірка, чи файл вже має BOM
             $hasBOM = $false
             try {
-                $fileContent = Get-Content -LiteralPath $_.FullName -Encoding Byte -TotalCount 3
-                $hasBOM = ($fileContent -eq 0xEF)
+                $bytes = [System.IO.File]::ReadAllBytes($_.FullName)
+                if ($bytes.Length -ge 3) {
+                    $hasBOM = ($bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF)
+                }
             } catch {
                 Write-Host "Помилка при зчитуванні файлу $($_.FullName): $_"
             }
 
             if (-not $hasBOM) {
-                # Конвертуємо файл
+                # Конвертуємо файл з windows-1251 в UTF-8 з BOM
                 $filePath = $_.FullName
-                $fileContent = Get-Content $filePath
-                $fileStreamWriter = New-Object System.IO.StreamWriter($filePath, $false, (New-Object System.Text.UTF8Encoding $true))
-                foreach ($line in $fileContent) {
-                    $fileStreamWriter.WriteLine($line)
-                }
-                $fileStreamWriter.Close()
+                $win1251 = [System.Text.Encoding]::GetEncoding('windows-1251')
+                $fileContent = [System.IO.File]::ReadAllText($filePath, $win1251)
+                $utf8BOM = New-Object System.Text.UTF8Encoding $true
+                [System.IO.File]::WriteAllText($filePath, $fileContent, $utf8BOM)
                 Write-Host "Файл $filePath було успішно перетворено в UTF-8 з BOM"
             } else {
                 Write-Host "Файл $($_.FullName) вже має BOM, пропускаємо конвертацію"
